@@ -184,6 +184,8 @@ namespace SerializeReferenceDropdown.Editor
                 nonUnityTypes.AddRange(assignableGenericTypes);
             }
 
+            nonUnityTypes.Sort((x, y) => string.Compare(x?.Name, y?.Name));
+
             return nonUnityTypes;
 
             bool IsAssignableNonUnityType(Type type)
